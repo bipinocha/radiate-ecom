@@ -21,13 +21,13 @@ class ProductsController extends Controller
     public function behaviors()
     {
         return [
-
             // 'verbs' => [
             //     'class' => VerbFilter::className(),
             //     'actions' => [
             //         'delete' => ['POST'],
             //     ],
             // ],
+
             'access' => [
                  'class' => AccessControl::className(),
   //               'only'=>['uploadcsv'],
@@ -85,10 +85,6 @@ class ProductsController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-
-    public function actionUploadcsv(){
-      $this->render('upload');
     }
 
     /**

@@ -9,6 +9,7 @@ use Yii;
  *
  * @property integer $_id
  * @property string $uploaded_date
+ * @property string $brand
  * @property string $seller_name
  * @property string $seller_email
  * @property string $sku_id
@@ -33,10 +34,10 @@ class Products extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['uploaded_date', 'seller_name', 'seller_email', 'sku_id', 'product_title', 'uploaded_on', 'city'], 'required'],
+            [['uploaded_date', 'brand', 'seller_name', 'seller_email', 'sku_id', 'product_title', 'uploaded_on', 'city'], 'required'],
             [['uploaded_date', 'createdon'], 'safe'],
+            [['brand', 'seller_email', 'sku_id', 'product_title', 'uploaded_on', 'city'], 'string', 'max' => 255],
             [['seller_name'], 'string', 'max' => 2000],
-            [['seller_email', 'sku_id', 'product_title', 'uploaded_on', 'city'], 'string', 'max' => 255],
         ];
     }
 
@@ -48,6 +49,7 @@ class Products extends \yii\db\ActiveRecord
         return [
             '_id' => Yii::t('app', 'Id'),
             'uploaded_date' => Yii::t('app', 'Uploaded Date'),
+            'brand' => Yii::t('app', 'Brand'),
             'seller_name' => Yii::t('app', 'Seller Name'),
             'seller_email' => Yii::t('app', 'Seller Email'),
             'sku_id' => Yii::t('app', 'Sku ID'),

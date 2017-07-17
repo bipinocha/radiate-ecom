@@ -19,11 +19,13 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'uploaded_date') ?>
 
+    <?= $form->field($model, 'brand') ?>
+
     <?= $form->field($model, 'seller_name') ?>
 
     <?= $form->field($model, 'seller_email') ?>
 
-    <?= $form->field($model, 'sku_id') ?>
+    <?php // echo $form->field($model, 'sku_id') ?>
 
     <?php // echo $form->field($model, 'product_title') ?>
 

@@ -95,7 +95,7 @@ class UploadexcelController extends Controller
                         if(!$product->save())
                         print_r($product->getErrors());
                         else
-                        $this->redirect('uploadexcel/index');
+                        $this->redirect('index.php?r=uploadexcel/index');
                       }
 
                     }else{

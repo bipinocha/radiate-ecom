@@ -14,6 +14,8 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'uploaded_date')->textInput() ?>
 
+    <?= $form->field($model, 'brand')->textInput(['maxlength' => true]) ?>
+
     <?= $form->field($model, 'seller_name')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'seller_email')->textInput(['maxlength' => true]) ?>

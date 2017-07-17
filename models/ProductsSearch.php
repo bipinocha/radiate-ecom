@@ -19,7 +19,7 @@ class ProductsSearch extends Products
     {
         return [
             [['_id'], 'integer'],
-            [['uploaded_date', 'seller_name', 'seller_email', 'sku_id', 'product_title', 'uploaded_on', 'createdon', 'city'], 'safe'],
+            [['uploaded_date', 'brand', 'seller_name', 'seller_email', 'sku_id', 'product_title', 'uploaded_on', 'createdon', 'city'], 'safe'],
         ];
     }
 
@@ -64,7 +64,8 @@ class ProductsSearch extends Products
             'createdon' => $this->createdon,
         ]);
 
-        $query->andFilterWhere(['like', 'seller_name', $this->seller_name])
+        $query->andFilterWhere(['like', 'brand', $this->brand])
+            ->andFilterWhere(['like', 'seller_name', $this->seller_name])
             ->andFilterWhere(['like', 'seller_email', $this->seller_email])
             ->andFilterWhere(['like', 'sku_id', $this->sku_id])
             ->andFilterWhere(['like', 'product_title', $this->product_title])
